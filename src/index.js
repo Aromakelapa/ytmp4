@@ -39,6 +39,6 @@ module.exports = async (link) => {
 		return result;
   } catch (error) {
     console.log(error);
-    return { success: false };
+    return { success: false, reason: 500 };
   };
 };
