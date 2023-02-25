@@ -5,7 +5,13 @@ module.exports = async (link) => {
     validate = await ytdl.validateURL(link),
     info = await ytdl.getInfo(link);
 
-  if (!validate) return { success: false, reason: 'Video not found!' };
+  if (!validate) {
+    return { success: false, reason: 'Video not found!' };
+  };
+
+  if (!link.includes('youtube.com/watch?v=') && !link.includes('youtu.be/')){
+    return { success: false, reason: 'Video not found!' };
+  };
 
   try {
     let thumbnail, hd, sd;

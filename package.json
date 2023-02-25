@@ -1,6 +1,6 @@
 {
   "name": "ytmp4",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Convert YouTube video link into downloaded formats / info data.",
   "main": "index.js",
   "scripts": {
