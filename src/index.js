@@ -1,15 +1,15 @@
 const ytdl = require('ytdl-core');
 
 module.exports = async (link) => {
-  const
-    validate = await ytdl.validateURL(link),
-    info = await ytdl.getInfo(link);
-
-  if (!validate) {
+  if (!link.includes('youtube.com/watch?v=') && !link.includes('youtu.be/')){
     return { success: false, reason: 'Video not found!' };
   };
 
-  if (!link.includes('youtube.com/watch?v=') && !link.includes('youtu.be/')){
+  const
+    validate = ytdl.validateURL(link),
+    info = await ytdl.getInfo(link);
+
+  if (!validate) {
     return { success: false, reason: 'Video not found!' };
   };
 
